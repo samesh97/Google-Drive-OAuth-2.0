@@ -20,7 +20,8 @@ namespace Google_OAuth_2._0.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var list = _googleDriveRepository.GetGoogleDriveFiles();
+            return View(list);
         }
 
         public IActionResult Login()

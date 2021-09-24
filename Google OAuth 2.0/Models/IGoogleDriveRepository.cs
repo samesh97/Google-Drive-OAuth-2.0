@@ -10,6 +10,7 @@ namespace Google_OAuth_2._0.Models
     {
         DriveService InitializeLogin();
         void UploadFile();
-        
+        IEnumerable<DriveFile> GetGoogleDriveFiles();
+
     }
 }

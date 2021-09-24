@@ -2,3 +2,18 @@
 @{
     ViewData["Title"] = "Home";
 }
+
+@if (Model == null)
+{
+    <p>Please Login</p> 
+}
+else if (Model.Count() == 0)
+{
+    <p>You don't have any files.</p> }
+else
+{
+    @foreach (var driveFile in Model)
+    {
+        <p>@driveFile.Name</p>
+    }
+}

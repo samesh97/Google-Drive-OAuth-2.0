@@ -51,6 +51,33 @@ namespace Google_OAuth_2._0.Models
         }
 
         [Obsolete]
-        
+        public IEnumerable<DriveFile> GetGoogleDriveFiles()
+        {
+            DriveService service = InitializeLogin();
+
+            FilesResource.ListRequest FileListRequest = service.Files.List();
+
+            FileListRequest.Fields = "nextPageToken, files(id, name, size, version, createdTime)";
+
+
+            IList<Google.Apis.Drive.v3.Data.File> files = FileListRequest.Execute().Files;
+
+            ICollection<DriveFile> fileList = new List<DriveFile>();
+
+            if (files != null && files.Count > 0)
+            {
+                foreach (var file in files)
+                {
+                    var driveFile = new DriveFile
+                    {
+                        Id = file.Id,
+                        Name = file.Name
+                    };
+                    fileList.Add(driveFile);
+                }
+            }
+            return fileList;
+        }
+
     }
 }
