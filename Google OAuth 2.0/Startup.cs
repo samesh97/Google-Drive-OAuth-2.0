@@ -1,3 +1,4 @@
+using Google_OAuth_2._0.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -23,6 +24,7 @@ namespace Google_OAuth_2._0
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IGoogleDriveRepository, GoogleDriveRepository>();
             services.AddControllersWithViews();
         }
 

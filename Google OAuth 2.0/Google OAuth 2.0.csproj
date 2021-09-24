@@ -5,4 +5,8 @@
     <RootNamespace>Google_OAuth_2._0</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Google.Apis.Drive.v3" Version="1.55.0.2453" />
+  </ItemGroup>
+
 </Project>

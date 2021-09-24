@@ -11,11 +11,11 @@ namespace Google_OAuth_2._0.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private IGoogleDriveRepository _googleDriveRepository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IGoogleDriveRepository googleDriveRepository)
         {
-            _logger = logger;
+            _googleDriveRepository = googleDriveRepository;
         }
 
         public IActionResult Index()
@@ -25,6 +25,7 @@ namespace Google_OAuth_2._0.Controllers
 
         public IActionResult Login()
         {
+            _googleDriveRepository.InitializeLogin();
             return View();
         }
 
