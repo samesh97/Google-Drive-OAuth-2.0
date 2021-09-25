@@ -20,16 +20,19 @@ namespace Google_OAuth_2._0.Controllers
 
         public IActionResult Index()
         {
-            var list = _googleDriveRepository.GetGoogleDriveFiles();
-            return View(list);
-        }
+           
+            try
+            {
+                var list = _googleDriveRepository.GetGoogleDriveFiles();
+                return View(list);
+            }
+            catch(Exception e)
+            {
+                return View(null);
+            }
 
-        public IActionResult Login()
-        {
-            _googleDriveRepository.InitializeLogin();
-            return View();
+            
         }
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

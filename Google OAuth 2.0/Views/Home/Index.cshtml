@@ -1,11 +1,24 @@
-﻿@model IEnumerable<DriveFile>
+﻿
+@model IEnumerable<DriveFile>
 @{
     ViewData["Title"] = "Home";
 }
 
 @if (Model == null)
 {
-    <p>Please Login</p> 
+    <div class="container-main">
+        <div class="login-container">
+
+            @using (Html.BeginForm("Login", "Home"))
+            {
+                <button class="btn-login">
+                    <img class="img-google" src="~/images/google_icon.png" />
+                    Login
+                </button>
+            }
+
+        </div>
+    </div>
 }
 else if (Model.Count() == 0)
 {

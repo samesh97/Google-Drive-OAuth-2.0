@@ -1,33 +1,32 @@
-﻿
-.container-main
-{
-    width:100%;
-    display:flex;
-    justify-content:center;
+﻿.container-main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
-.login-container 
-{
+
+.login-container {
     width: 50%;
     margin-top: 50px;
     border-radius: 7px;
     display: flex;
     justify-content: center;
 }
-.login-container img
-{
-    width:auto;
-    height:40px;
-}
-.btn-login
+
+    .login-container img {
+        width: auto;
+        height: 40px;
+    }
+
+.btn-login 
 {
     width: 30%;
     height: 50px;
-    background-color: red;
+    background-color: black;
     color: white;
-    border:none;
-    border-radius:5px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight:bold;
-    font-size:18px;
-    letter-spacing:3px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 3px;
 }

@@ -42,6 +42,8 @@ namespace Google_OAuth_2._0.Models
                 ApplicationName = appName,
             });
 
+
+
             return service;
         }
 
@@ -53,7 +55,7 @@ namespace Google_OAuth_2._0.Models
         [Obsolete]
         public IEnumerable<DriveFile> GetGoogleDriveFiles()
         {
-            DriveService service = InitializeLogin();
+            DriveService service =  InitializeLogin();
 
             FilesResource.ListRequest FileListRequest = service.Files.List();
 
