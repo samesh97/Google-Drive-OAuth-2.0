@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\source\\repos\\Google OAuth 2.0\\Google OAuth 2.0\\Google OAuth 2.0.csproj": {}
+    "F:\\Education\\4th year\\SSD\\ass5g0ent 2\\New folder\\Google-OAuth-2.0\\Google OAuth 2.0\\Google OAuth 2.0.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\source\\repos\\Google OAuth 2.0\\Google OAuth 2.0\\Google OAuth 2.0.csproj": {
+    "F:\\Education\\4th year\\SSD\\ass5g0ent 2\\New folder\\Google-OAuth-2.0\\Google OAuth 2.0\\Google OAuth 2.0.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\source\\repos\\Google OAuth 2.0\\Google OAuth 2.0\\Google OAuth 2.0.csproj",
+        "projectUniqueName": "F:\\Education\\4th year\\SSD\\ass5g0ent 2\\New folder\\Google-OAuth-2.0\\Google OAuth 2.0\\Google OAuth 2.0.csproj",
         "projectName": "Google OAuth 2.0",
-        "projectPath": "C:\\Users\\user\\source\\repos\\Google OAuth 2.0\\Google OAuth 2.0\\Google OAuth 2.0.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\source\\repos\\Google OAuth 2.0\\Google OAuth 2.0\\obj\\",
+        "projectPath": "F:\\Education\\4th year\\SSD\\ass5g0ent 2\\New folder\\Google-OAuth-2.0\\Google OAuth 2.0\\Google OAuth 2.0.csproj",
+        "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
+        "outputPath": "F:\\Education\\4th year\\SSD\\ass5g0ent 2\\New folder\\Google-OAuth-2.0\\Google OAuth 2.0\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +29,6 @@
         },
         "frameworks": {
           "net5.0": {
-            "targetAlias": "net5.0",
             "projectReferences": {}
           }
         },
@@ -38,32 +40,18 @@
       },
       "frameworks": {
         "net5.0": {
-          "targetAlias": "net5.0",
           "dependencies": {
             "Google.Apis.Drive.v3": {
               "target": "Package",
               "version": "[1.55.0.2453, )"
             }
           },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win7-x86": {
+          "#import": []
         }
       }
     }

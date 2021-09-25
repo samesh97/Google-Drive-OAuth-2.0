@@ -13,6 +13,14 @@ namespace Google_OAuth_2._0.Models
 {
     public class GoogleDriveRepository : IGoogleDriveRepository
     {
+
+        private readonly IHostingEnvironment _env;
+
+        public GoogleDriveRepository(IHostingEnvironment env)
+        {
+            _env = env;
+        }
+
         [Obsolete]
         public DriveService InitializeLogin()
         {
@@ -47,9 +55,26 @@ namespace Google_OAuth_2._0.Models
             return service;
         }
 
-        public void UploadFile()
+        [Obsolete]
+        public void UploadFile(IFormFile file)
         {
-            throw new NotImplementedException();
+            string path = SaveFileLocally(file);
+
+            var service = InitializeLogin();
+            var fileMetadata = new Google.Apis.Drive.v3.Data.File();
+            fileMetadata.Name = Path.GetFileName(path);
+            fileMetadata.MimeType = "image/jpeg";
+            FilesResource.CreateMediaUpload request;
+            using (var stream = new FileStream(path, FileMode.Open))
+            {
+                request = service.Files.Create(fileMetadata, stream, file.ContentType);
+                request.Fields = "id";
+                request.Upload();
+            }
+
+            var files = request.ResponseBody;
+
+           
         }
 
         [Obsolete]
@@ -109,6 +134,19 @@ namespace Google_OAuth_2._0.Models
             }
 
             return fileSize + text;
+        }
+        public string SaveFileLocally(IFormFile file)
+        {
+            var dir = _env.ContentRootPath;
+
+            var path = Path.Combine(dir, "Uploads/" + file.FileName);
+
+            using (var fileStream = new FileStream(path,FileMode.Create,FileAccess.Write))
+            {
+                file.CopyTo(fileStream);
+            }
+
+            return path;
         }
 
     }

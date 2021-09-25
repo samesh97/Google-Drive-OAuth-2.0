@@ -11,7 +11,7 @@
 }
 else
 {
-    @using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    @using (Html.BeginForm("UploadFile", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         <p class="login-container ">
             <input type="file" name="file" id="file" />
