@@ -9,6 +9,8 @@ namespace Google_OAuth_2._0.Models
     {
         public string Id { get; set; }
         public string Name { get; set; }
-        
+        public string FileSize { get; set; }
+        public string CreatedOn { get; set; }
+
     }
 }

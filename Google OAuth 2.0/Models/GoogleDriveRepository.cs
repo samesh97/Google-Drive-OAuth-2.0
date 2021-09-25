@@ -55,7 +55,7 @@ namespace Google_OAuth_2._0.Models
         [Obsolete]
         public IEnumerable<DriveFile> GetGoogleDriveFiles()
         {
-            DriveService service =  InitializeLogin();
+            DriveService service = InitializeLogin();
 
             FilesResource.ListRequest FileListRequest = service.Files.List();
 
@@ -70,15 +70,45 @@ namespace Google_OAuth_2._0.Models
             {
                 foreach (var file in files)
                 {
+
+                    string size = FindFileSize(file.Size);
+
+
                     var driveFile = new DriveFile
                     {
                         Id = file.Id,
-                        Name = file.Name
+                        Name = file.Name,
+                        FileSize = size,
+                        CreatedOn = file.CreatedTime.Value.ToShortDateString()
                     };
                     fileList.Add(driveFile);
                 }
             }
             return fileList;
+        }
+        public string FindFileSize(long? fileSize)
+        {
+            string text;
+
+            if (fileSize == null) text = "Not Found";
+            else
+            {
+                text = " Bytes";
+
+                if (fileSize >= 1024)
+                {
+                    fileSize /= (1024);
+                    text = " KB";
+                }
+
+                if (fileSize >= 1024)
+                {
+                    fileSize /= (1024);
+                    text = " MB";
+                }
+            }
+
+            return fileSize + text;
         }
 
     }
