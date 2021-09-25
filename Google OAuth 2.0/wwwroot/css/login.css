@@ -4,24 +4,30 @@
     justify-content: center;
 }
 
-.login-container {
-    width: 50%;
-    margin-top: 50px;
+.login-container 
+{
+    width: 100%;
+    margin-top: 30px;
     border-radius: 7px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    background-color: #F1F1F1;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
-    .login-container img {
+.login-container img
+{
         width: auto;
         height: 40px;
-    }
+}
 
 .btn-login 
 {
-    width: 30%;
+    width: 20%;
     height: 50px;
-    background-color: black;
+    background-color: red;
     color: white;
     border: none;
     border-radius: 5px;
@@ -29,6 +35,7 @@
     font-weight: bold;
     font-size: 18px;
     letter-spacing: 3px;
+    float: right;
 }
 
 .select-file-label 
