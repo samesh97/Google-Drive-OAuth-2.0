@@ -2,6 +2,8 @@
 using Google.Apis.Drive.v3;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.IO;
