@@ -9,8 +9,8 @@ namespace Google_OAuth_2._0.Models
 {
     public interface IGoogleDriveRepository
     {
-        DriveService InitializeLogin();
-       void UploadFile(IFormFile imageFile);
+        DriveService GetDriveService();
+        void UploadFile(IFormFile imageFile);
         IEnumerable<DriveFile> GetGoogleDriveFiles();
 
     }

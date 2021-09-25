@@ -7,9 +7,7 @@ using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Google_OAuth_2._0.Models
 {
@@ -24,7 +22,7 @@ namespace Google_OAuth_2._0.Models
         }
 
         [Obsolete]
-        public DriveService InitializeLogin()
+        public DriveService GetDriveService()
         {
             string[] scopes = { DriveService.Scope.Drive };
             string credentials = "credentials.json";
@@ -62,7 +60,7 @@ namespace Google_OAuth_2._0.Models
         {
             string path = SaveFileLocally(file);
 
-            var service = InitializeLogin();
+            var service = GetDriveService();
             var fileMetadata = new Google.Apis.Drive.v3.Data.File();
             fileMetadata.Name = Path.GetFileName(path);
             fileMetadata.MimeType = "image/jpeg";
@@ -82,7 +80,7 @@ namespace Google_OAuth_2._0.Models
         [Obsolete]
         public IEnumerable<DriveFile> GetGoogleDriveFiles()
         {
-            DriveService service = InitializeLogin();
+            DriveService service = GetDriveService();
 
             FilesResource.ListRequest FileListRequest = service.Files.List();
 
