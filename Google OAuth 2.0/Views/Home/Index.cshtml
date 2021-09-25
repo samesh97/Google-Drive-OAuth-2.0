@@ -4,6 +4,15 @@
     ViewData["Title"] = "Home";
 }
 
+@using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <p>
+            <label class="select-file-label" for="file">Select File - </label>
+            <input type="file" name="file" id="file" />
+            <input class="btn-login" type="submit" value="Upload" />
+        </p>
+    }
+
 @if (Model == null)
 {
     <div class="container-main">

@@ -30,3 +30,10 @@
     font-size: 18px;
     letter-spacing: 3px;
 }
+
+.select-file-label 
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+}
