@@ -25,15 +25,15 @@
 
 .btn-login 
 {
-    width: 20%;
-    height: 50px;
-    background-color: red;
+    width: 15%;
+    height: 40px;
+    background-color: #0026ff;
     color: white;
     border: none;
     border-radius: 5px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 15px;
     letter-spacing: 3px;
     float: right;
 }
@@ -43,4 +43,15 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
     font-size: 18px;
+}
+.btn-delete, .btn-download {
+    background-color: red;
+    color: white;
+    width: 100px;
+    font-family: 'Franklin Gothic Medium';
+    border-radius: 3px;
+}
+.btn-download{
+    background-color: #F1F1F1;
+    color: black;
 }

@@ -14,7 +14,7 @@ else
     @using (Html.BeginForm("UploadFile", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         <p class="login-container ">
-            <input type="file" name="file" id="file" />
+            <input required type="file" name="file" id="file" />
             <input class="btn-login" type="submit" value="Upload" />
         </p>
     }
@@ -27,8 +27,8 @@ else
             <th>File Name</th>
             <th>File Size</th>
             <th>Created Date</th>
-            <th>Action 1</th>
-            <th>Action 2</th>
+            <th></th>
+            <th></th>
         </tr>
 
 
@@ -39,10 +39,18 @@ else
                 <td>@driveFile.FileSize</td>
                 <td>@driveFile.CreatedOn</td>
                 <td>
-                    <button>Download</button>
+                    @using (Html.BeginForm("Download", "Home"))
+                    {
+                        <button class="btn-download">Download</button>
+                    }
+                    
                 </td>
                 <td>
-                    <button style="margin-bottom:8px;">Delete</button>
+                    @using (Html.BeginForm("Delete", "Home"))
+                    {
+                        <button class="btn-delete" style="margin-bottom:8px;">Delete</button>
+                    }
+
                 </td>
             </tr>
         }
