@@ -50,7 +50,11 @@ namespace Google_OAuth_2._0.Controllers
 
         }
 
-
+        public IActionResult Delete(string fileId)
+        {
+            _googleDriveRepository.DeleteFile(fileId);
+            return RedirectToAction("index");
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
