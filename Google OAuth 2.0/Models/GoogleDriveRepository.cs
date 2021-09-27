@@ -194,5 +194,10 @@ namespace Google_OAuth_2._0.Models
 
             return path;
         }
+
+        public void DeleteFile(string fileId)
+        {
+            
+        }
     }
 }
