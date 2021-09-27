@@ -197,7 +197,15 @@ namespace Google_OAuth_2._0.Models
 
         public void DeleteFile(string fileId)
         {
-            
+            DriveService driveService = GetDriveService();
+            try
+            {
+                driveService.Files.Delete(fileId).Execute();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"File could not be deleted, {ex}");
+            }
         }
     }
 }

@@ -50,6 +50,8 @@ namespace Google_OAuth_2._0.Controllers
 
         }
 
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
