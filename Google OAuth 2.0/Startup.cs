@@ -25,7 +25,10 @@ namespace Google_OAuth_2._0
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IGoogleDriveRepository, GoogleDriveRepository>();
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            
+
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

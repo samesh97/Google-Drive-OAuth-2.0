@@ -13,10 +13,11 @@ namespace Google_OAuth_2._0.Controllers
     public class HomeController : Controller
     {
         private IGoogleDriveRepository _googleDriveRepository;
-
+        
         public HomeController(IGoogleDriveRepository googleDriveRepository)
         {
             _googleDriveRepository = googleDriveRepository;
+                 
         }
 
         public IActionResult Index()
@@ -38,6 +39,15 @@ namespace Google_OAuth_2._0.Controllers
         {
             _googleDriveRepository.UploadFile(file);
             return RedirectToAction("Index");
+
+            
+        }
+
+        public IActionResult Download(string id)
+        {
+            string path = _googleDriveRepository.DownloadFile(id);
+            return RedirectToAction("Index");
+
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

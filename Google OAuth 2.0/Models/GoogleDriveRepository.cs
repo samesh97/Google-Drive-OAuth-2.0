@@ -1,4 +1,5 @@
 ﻿using Google.Apis.Auth.OAuth2;
+using Google.Apis.Download;
 using Google.Apis.Drive.v3;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
@@ -21,7 +22,7 @@ namespace Google_OAuth_2._0.Models
             _env = env;
         }
 
-        [Obsolete]
+        
         public DriveService GetDriveService()
         {
             string[] scopes = { DriveService.Scope.Drive };
@@ -55,7 +56,7 @@ namespace Google_OAuth_2._0.Models
             return service;
         }
 
-        [Obsolete]
+        
         public void UploadFile(IFormFile file)
         {
             string path = SaveFileLocally(file);
@@ -77,7 +78,7 @@ namespace Google_OAuth_2._0.Models
            
         }
 
-        [Obsolete]
+        
         public IEnumerable<DriveFile> GetGoogleDriveFiles()
         {
             DriveService service = GetDriveService();
@@ -149,5 +150,49 @@ namespace Google_OAuth_2._0.Models
             return path;
         }
 
+        public string DownloadFile(string fileId)
+        {
+            DriveService service = GetDriveService();
+
+            var dir = _env.ContentRootPath;
+            
+
+            FilesResource.GetRequest request = service.Files.Get(fileId);
+            string FileName = request.Execute().Name;
+
+            var path = Path.Combine(dir, $"Downloads/{FileName}");
+
+            MemoryStream stream1 = new MemoryStream();
+
+            request.MediaDownloader.ProgressChanged += (IDownloadProgress progress) =>
+            {
+                switch (progress.Status)
+                {
+                    case DownloadStatus.Downloading:
+                        {
+                            Console.WriteLine(progress.BytesDownloaded);
+                            break;
+                        }
+                    case DownloadStatus.Completed:
+                        {
+                            Console.WriteLine("Download complete.");
+                            using (FileStream file = new FileStream(path, FileMode.Create, FileAccess.ReadWrite))
+                            {
+                                stream1.WriteTo(file);
+                            }
+
+                            break;
+                        }
+                    case DownloadStatus.Failed:
+                        {
+                            Console.WriteLine("Download failed.");
+                            break;
+                        }
+                }
+            };
+            request.Download(stream1);
+
+            return path;
+        }
     }
 }

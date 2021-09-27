@@ -11,6 +11,7 @@ namespace Google_OAuth_2._0.Models
     {
         DriveService GetDriveService();
         void UploadFile(IFormFile imageFile);
+        string DownloadFile(string fileId);
         IEnumerable<DriveFile> GetGoogleDriveFiles();
 
     }
