@@ -55,7 +55,7 @@ else
 
                 </td>
                 <td>
-                    @using (Html.BeginForm("Delete", "Home"))
+                    @using (Html.BeginForm("Delete", "Home", new { fileId = driveFile.Id }, FormMethod.Post))
                     {
                         <button class="btn-delete" style="margin-bottom:8px;">Delete</button>
                     }
