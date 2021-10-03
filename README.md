@@ -8,4 +8,4 @@ Step 4 -> Sign in with your Google account. ( Only the test emails added to the 
 
 Step 5 -> Allow Google drive access to the application.
 
-Step 6 -> Read, Upload, Download, Delete Google drive files.
+Step 6 -> Read, Upload, Download, Delete Google drive files using the developed web application.
